@@ -6,9 +6,9 @@ commit, que tienen los siguientes cambios para adaptarlos a JMeter:
 
 - WebClient no es static (para generar una ventana de browser por thread)
 
-- Usamos HtmlUnitDriver o PhantomJSDriver (para no saturar el equipo cuando arrancamos 
-múltiples threads)
-
+- Usamos HtmlUnitDriver o algún otro headless driver (PhantomJs o Chrome headless)
+para no saturar el equipo cuando arrancamos múltiples threads con jmeter. Los ejecutables
+de cada driver están en la carpeta drivers, junto con un leeme.txt sobre cómo utlizarlos.
 
 Hay dos plugins añadidos al pom.xml. Uno es para copiar todas las dependencias a la carpeta
 target/lib y poder copiarlas manualmente a $JMETER_HOME/lib/testing, la otra para copiar el 

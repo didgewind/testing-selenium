@@ -1,0 +1,18 @@
+System.setProperty(
+
+- Chrome:
+	"webdriver.chrome.driver", "/home/storage/madehomeextra/Documents/Freelance/workspaces especializados/tdd/selenium-tests/drivers/chromedriver");
+	ChromeOptions chromeOptions = new ChromeOptions();
+    chromeOptions.setHeadless(true);
+	driver = new ChromeDriver(chromeOptions);
+
+- Firefox:
+	"webdriver.gecko.driver"
+	driver = new FirefoxDriver();
+
+- PhantomJs:
+	"phantomjs.binary.path"
+	driver = new PhantomJSDriver();
+	
+- HtmlUnit:
+	driver = new HtmlUnitDriver(); (no hace falta el System.setProperty)

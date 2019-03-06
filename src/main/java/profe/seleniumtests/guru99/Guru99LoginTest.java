@@ -1,21 +1,27 @@
 package profe.seleniumtests.guru99;
 
+import static org.junit.Assert.assertTrue;
+
 import java.util.concurrent.TimeUnit;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.Before;
+import org.junit.Test;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.phantomjs.PhantomJSDriver;
 
 public class Guru99LoginTest {
 	WebDriver driver;
 	Guru99Login objLogin;
 	Guru99HomePage objHomePage;
 
-	@BeforeEach
-	public void setup() {
-		driver = new FirefoxDriver();
+	@Before
+	public void setUp() {
+		ChromeOptions chromeOptions = new ChromeOptions();
+	    chromeOptions.setHeadless(true);
+	    driver = new ChromeDriver(chromeOptions);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.get("http://demo.guru99.com/V4/");
 	}
@@ -31,12 +37,12 @@ public class Guru99LoginTest {
 		objLogin = new Guru99Login(driver);
 		// Verify login page title
 		String loginPageTitle = objLogin.getLoginTitle();
-		Assertions.assertTrue(loginPageTitle.toLowerCase().contains("guru99 bank"));
+		assertTrue(loginPageTitle.toLowerCase().contains("guru99 bank"));
 		// login to application
 		objLogin.loginToGuru99("mgr123", "mgr!23");
 		// go the next page
 		objHomePage = new Guru99HomePage(driver);
 		// Verify home page
-		Assertions.assertTrue(objHomePage.getHomePageDashboardUserName().toLowerCase().contains("manger id : mgr123"));
+		assertTrue(objHomePage.getHomePageDashboardUserName().toLowerCase().contains("manger id : mgr123"));
 	}
 }
