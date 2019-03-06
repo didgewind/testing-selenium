@@ -1,14 +1,17 @@
 package profe.seleniumtests;
 
-import static org.junit.jupiter.api.Assertions.*;
-import org.junit.jupiter.api.Test;
+//import static org.junit.jupiter.api.Assertions.*;
+//import org.junit.jupiter.api.Test;
+import static org.junit.Assert.assertEquals;
+
+import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 
 public class TheAutTesterTest {
 
-	private static WebDriver selenium = new FirefoxDriver();
+	private WebDriver selenium = new HtmlUnitDriver();
 
 	@Test
 	public void shouldCheckButtonOnChapter2Page() {

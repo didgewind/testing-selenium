@@ -1,0 +1,17 @@
+Proyecto con distintos ejemplos de Selenium 3. Todos usan notación JUnit5 menos TheAutTesterTest 
+a partir del commit TheAutTesterTest preparado para jmeter, y los Gurus en el siguiente
+commit, que tienen los siguientes cambios para adaptarlos a JMeter:
+
+- Su run configuration está con JUnit4
+
+- WebClient no es static (para generar una ventana de browser por thread)
+
+- Usamos HtmlUnitDriver o PhantomJSDriver (para no saturar el equipo cuando arrancamos 
+múltiples threads)
+
+
+Hay dos plugins añadidos al pom.xml. Uno es para copiar todas las dependencias a la carpeta
+target/lib y poder copiarlas manualmente a $JMETER_HOME/lib/testing, la otra para copiar el 
+jar resultante a la carpeta $JMETER_HOME/lib/junit. El
+primero se lanza en la fase prepare_package, el segundo en la fase install. Hemos asignado
+Ctrl + Alt + m para ejecutar maven install y que se hagan las dos cosas.

@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.internal.FindsById;
 
 /*
  * Ejemplo Guru99 sin page objects
@@ -41,4 +42,5 @@ public class Guru99TestAllTogether {
 			// Verify home page
 			Assertions.assertTrue(driver.findElement(By.xpath("//table//tr[@class='heading3']")).getText().toLowerCase().contains("manger id : mgr123"));
 		}
+		
 }
