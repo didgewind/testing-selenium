@@ -1,0 +1,2 @@
+lanzar primero el empleados-mock (localhost:5555/empleados) y luego el war (localhost:3333),
+con java -jar ... El rest service está sin seguridad y con un dao mock.

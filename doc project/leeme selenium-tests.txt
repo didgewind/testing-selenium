@@ -15,3 +15,6 @@ target/lib y poder copiarlas manualmente a $JMETER_HOME/lib/testing, la otra par
 jar resultante a la carpeta $JMETER_HOME/lib/junit. El
 primero se lanza en la fase prepare_package, el segundo en la fase install. Hemos asignado
 Ctrl + Alt + m para ejecutar maven install y que se hagan las dos cosas.
+
+- Hay también pruebas selenium contra empleados. Hay que arrancar primero el rest service y luego
+el war. Los ficheros y la doc están en la carpeta web-services
